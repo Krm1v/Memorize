@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct CardBoardView: View {
+    let flags = ["🇺🇦", "🇱🇹", "🇷🇴", "🇫🇮"]
+    
     var body: some View {
         HStack {
-            ForEach(1..<5) { _ in
-                CardView()
+            ForEach(flags, id: \.self) { flag in
+                CardView(content: flag)
             }
         }
         .padding()
